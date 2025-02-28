@@ -4,24 +4,24 @@ import '../styles/Projects.css';  // Importing the component-specific styles for
 const Projects = () => {
   const projects = [
     {
-      title: "Project 1",
-      description: "A short description of what Project 1 is about. It could be a React app, a static website, or something else.",
-      link: "https://github.com/yourusername/project1"
+      title: "COVID-19 Tracker",
+      description: "A web application that provides real-time location-based COVID-19 updates, global news, and local resources. Built using HTML, CSS, JavaScript, jQuery, and multiple APIs.",
+      link: "https://github.com/mauricechouam/COVID-19-Tracker"
     },
     {
-      title: "Project 2",
-      description: "A short description of what Project 2 is about. It could be an API, a full-stack app, etc.",
-      link: "https://github.com/yourusername/project2"
+      title: "Weather Dashboard",
+      description: "A dashboard that provides real-time weather data and forecasts for multiple cities using OpenWeather API. Built with jQuery, Moment.js, and REST APIs.",
+      link: "https://github.com/mauricechouam/Weather-Dashboard"
     },
     {
-      title: "Project 3",
-      description: "A short description of what Project 3 is about, highlighting the tools and tech used.",
-      link: "https://github.com/yourusername/project3"
+      title: "My Portfolio Temaplate",
+      description: "This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.",
+      link: "https://github.com/mauricechouam/React_PortFolio-using-Yarn"
     },
     {
-      title: "Project 4",
-      description: "A short description of Project 4. This project showcases your skills in a specific area.",
-      link: "https://github.com/yourusername/project4"
+      title: "Emoji runner",
+      description: "A fun twist on the classic runner game featuring a secure user login system. Player profiles and high scores are stored in a database. Built with P5.js, Express, and MySQL.",
+      link: "https://github.com/mauricechouam/Emoji-Runner"
     }
   ];
 
