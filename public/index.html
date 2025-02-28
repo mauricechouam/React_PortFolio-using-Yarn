@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Simple Webpage with Multiple DOM Manipulations</title>
+    <style>
+        /* Reset some basic styles for the page */
+        body, h1, h2, p {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Body background color */
+        body {
+            background-color: #f4f4f9;
+            padding: 20px;
+            transition: background-color 0.5s ease-in-out;
+        }
+
+        /* Styling the header */
+        header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            transition: background-color 0.5s ease;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+        }
+
+        header nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        header nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        header nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
+        }
+
+        header nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        /* Main content styling */
+        main {
+            margin-top: 30px;
+        }
+
+        /* Section styles */
+        section {
+            background-color: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            animation: fadeIn 1s forwards; /* Fade-in effect */
+        }
+
+        section h2 {
+            color: #388e3c;
+            font-size: 1.8rem;
+        }
+
+        section p {
+            font-size: 1rem;
+            color: #333;
+        }
+
+        /* Footer styling */
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            margin-top: 30px;
+            transition: background-color 0.5s ease;
+        }
+
+        /* Animation for sections */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        /* Bounce animation for buttons */
+        @keyframes bounce {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        button {
+            margin: 10px 0;
+            padding: 10px 20px;
+            font-size: 1rem;
+            cursor: pointer;
+            border: none;
+            background-color: #4CAF50;
+            color: white;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        button:active {
+            animation: bounce 0.2s ease-in-out;
+        }
+
+        /* Smooth background transition */
+        .smooth-bg {
+            background-color: #f4f4f9;
+            transition: background-color 0.5s ease;
+        }
+
+        /* Slide-in effect for new sections */
+        @keyframes slideIn {
+            0% {
+                transform: translateX(-100%);
+            }
+            100% {
+                transform: translateX(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <h1>Welcome to My Simple Webpage</h1>
+        <nav>
+            <ul>
+                <li><a href="#home" onclick="showAlert('Home')">Home</a></li>
+                <li><a href="#about" onclick="showAlert('About')">About</a></li>
+                <li><a href="#contact" onclick="showAlert('Contact')">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content Section -->
+    <main>
+        <!-- Home Section -->
+        <section id="home">
+            <h2>Home</h2>
+            <p>This is the home section of my webpage.</p>
+            <button onclick="changeText('home')">Change Home Text</button>
+            <button onclick="changeBackgroundColor('home')">Change Home Background</button>
+            <button onclick="animateText('home')">Animate Home Text</button>
+        </section>
+
+        <!-- About Section -->
+        <section id="about">
+            <h2>About</h2>
+            <p>Learn more about me in this section.</p>
+            <button onclick="changeText('about')">Change About Text</button>
+            <button onclick="changeBackgroundColor('about')">Change About Background</button>
+            <button onclick="animateText('about')">Animate About Text</button>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <h2>Contact</h2>
+            <p>Get in touch with me through this section.</p>
+            <button onclick="changeText('contact')">Change Contact Text</button>
+            <button onclick="changeBackgroundColor('contact')">Change Contact Background</button>
+            <button onclick="animateText('contact')">Animate Contact Text</button>
+        </section>
+
+        <!-- Interactive Buttons -->
+        <button onclick="addNewSection()">Add New Section</button>
+    </main>
+
+    <!-- Footer Section -->
+    <footer id="footer">
+        <p>&copy; 2025 My Simple Webpage</p>
+    </footer>
+
+    <script>
+        // JavaScript to manipulate the DOM
+        
+        // Function to show an alert when a nav link is clicked
+        function showAlert(section) {
+            alert("You clicked on the " + section + " section!");
+        }
+
+        // Function to change the text content of a section
+        function changeText(sectionId) {
+            var section = document.getElementById(sectionId);
+            section.querySelector('p').textContent = "This is the updated content for the " + sectionId + " section!";
+        }
+
+        // Function to change the background color of a section
+        function changeBackgroundColor(sectionId) {
+            var section = document.getElementById(sectionId);
+            section.style.backgroundColor = section.style.backgroundColor === 'rgb(255, 0, 0)' ? 'white' : 'red';
+        }
+
+        // Function to animate the text content of a section
+        function animateText(sectionId) {
+            var section = document.getElementById(sectionId);
+            var paragraph = section.querySelector('p');
+            paragraph.style.animation = 'fadeIn 1s forwards'; // Trigger the fade-in animation
+        }
+
+        // Function to add a new section dynamically with a slide-in effect
+        function addNewSection() {
+            var newSection = document.createElement('section');
+            newSection.innerHTML = `
+                <h2>New Section</h2>
+                <p>This is a dynamically added section!</p>
+                <button onclick="changeText('new')">Change New Section Text</button>
+                <button onclick="changeBackgroundColor('new')">Change New Section Background</button>
+                <button onclick="animateText('new')">Animate New Section Text</button>
+            `;
+            newSection.id = 'new';
+            newSection.style.transform = 'translateX(-100%)';
+            newSection.style.animation = 'slideIn 0.5s forwards';
+            document.querySelector('main').appendChild(newSection);
+        }
+
+        // Display current time in the footer when the page loads
+        window.onload = function() {
+            var footer = document.getElementById('footer');
+            var currentTime = new Date().toLocaleTimeString();
+            footer.innerHTML += `<p>Current Time: ${currentTime}</p>`;
+        }
+    </script>
+</body>
+</html>

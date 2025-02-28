@@ -1,0 +1,16 @@
+/* Component-specific Styles (About.css) */
+#about {
+  background-color: #e0f7fa;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+#about h2 {
+  font-size: 2rem;
+  color: #00695c;
+}
+
+#about p {
+  font-size: 1.1rem;
+  color: #004d40;
+}
